@@ -8,12 +8,20 @@
 import Foundation
 import SwiftUI
 
-struct bigRoundedButton: View {
-    var iconName: String
+public struct BigRoundedButton: View {
+    var systemIconName: String
     var buttonName: String
     var backgroundOpacity: Double = 0.8
     var buttonColor: Color
-    var body: some View {
+    
+    public init(systemIconName: String, buttonName: String, backgroundOpacity: Double = 0.8, buttonColor: Color) {
+        self.systemIconName = systemIconName
+        self.buttonName = buttonName
+        self.backgroundOpacity = backgroundOpacity
+        self.buttonColor = buttonColor
+    }
+    
+    public var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25.0)
                 .frame(height: 60, alignment: .center)
@@ -22,7 +30,7 @@ struct bigRoundedButton: View {
                 .padding(.horizontal, 20)
                 .padding(.vertical, 5)
             HStack {
-                Image(systemName: iconName)
+                Image(systemName: systemIconName)
                     .foregroundColor(.white)
                 Text(buttonName)
                     .foregroundColor(.white)
@@ -30,4 +38,5 @@ struct bigRoundedButton: View {
             }
         }
     }
+    
 }
