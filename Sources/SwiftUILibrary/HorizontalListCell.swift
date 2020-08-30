@@ -19,7 +19,7 @@ public struct HorizontalListCell: View {
     private var subtitle2: String
     private var actionLabel: String
     
-    init(systemIconName: String, title: String, subtitle: String, subtitle2: String, actionLabel: String) {
+    public init(systemIconName: String, title: String, subtitle: String, subtitle2: String, actionLabel: String) {
         self.isSystemIcon = true
         self.iconName = systemIconName
         self.title = title
@@ -28,7 +28,7 @@ public struct HorizontalListCell: View {
         self.actionLabel = actionLabel
     }
     
-    init(fileIconName: String, title: String, subtitle: String, subtitle2: String, actionLabel: String) {
+    public init(fileIconName: String, title: String, subtitle: String, subtitle2: String, actionLabel: String) {
         self.isSystemIcon = false
         self.iconName = fileIconName
         self.title = title
