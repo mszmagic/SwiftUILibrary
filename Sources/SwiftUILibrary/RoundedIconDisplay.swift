@@ -13,7 +13,7 @@ public struct RoundedIconDisplay: View {
     private var isSystemIcon: Bool
     private var iconName: String
     
-    init(isSystemIcon: Bool, iconName: String) {
+    public init(isSystemIcon: Bool, iconName: String) {
         self.isSystemIcon = isSystemIcon
         self.iconName = iconName
     }
