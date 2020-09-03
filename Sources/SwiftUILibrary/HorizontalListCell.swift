@@ -50,18 +50,15 @@ public struct HorizontalListCell: View {
                     Text(title)
                         .font(.headline)
                         .padding(.top, 6)
-                        .foregroundColor(.white)
                 }
                 
                 if subtitle != "" {
                     Text(subtitle)
                         .font(.subheadline)
-                        .foregroundColor(.white)
                 }
                 
                 if subtitle2 != "" {
                     Text(subtitle2)
-                        .foregroundColor(.white)
                         .padding(.bottom, 6)
                 }
                 
@@ -70,15 +67,16 @@ public struct HorizontalListCell: View {
             Spacer()
             
             Text(actionLabel)
-                .foregroundColor(.white)
                 .padding(.trailing, 20)
             
         }
-        .padding(6)
-        .background(Color(.darkGray))
-        .cornerRadius(20)
-        .shadow(radius: 3)
         
     }
     
+}
+
+struct HorizontalListCell_Previews: PreviewProvider {
+    static var previews: some View {
+        HorizontalListCell(systemIconName: "bag.fill", title: "Title", subtitle: "Subtitle", subtitle2: "Subtitle 2", actionLabel: "Label")
+    }
 }
