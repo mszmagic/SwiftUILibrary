@@ -10,8 +10,6 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
-- task: GitVersion@5
-  displayName: 'GitVersion'
 
 - script: swift package resolve
   failOnStderr: true
