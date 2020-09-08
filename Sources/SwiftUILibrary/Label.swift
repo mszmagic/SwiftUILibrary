@@ -13,12 +13,10 @@ import SwiftUI
 public struct Label: View {
     
     private var systemIconName: String
-    private var localIconName: String
     private var labelTitle: String
     private var shouldCenter: Bool
     
-    public init(systemIconName: String = "", localIconName: String = "", labelTitle: String, shouldCenter: Bool = true) {
-        self.localIconName = localIconName
+    public init(systemIconName: String, labelTitle: String, shouldCenter: Bool = true) {
         self.systemIconName = systemIconName
         self.labelTitle = labelTitle
         self.shouldCenter = shouldCenter
@@ -28,17 +26,9 @@ public struct Label: View {
         
         HStack {
             
-            if systemIconName != "" {
-                Image(systemName: systemIconName)
-                    .font(.headline)
-                    .padding(.leading, shouldCenter ? 0 : 30)
-            } else if localIconName != "" {
-                Image(localIconName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 20, height: 20, alignment: .center)
-                    .padding(.leading, shouldCenter ? 0 : 30)
-            }
+            Image(systemName: systemIconName)
+                .font(.headline)
+                .padding(.leading, shouldCenter ? 0 : 30)
             
             Text(labelTitle)
                 .padding(.leading, 10)
