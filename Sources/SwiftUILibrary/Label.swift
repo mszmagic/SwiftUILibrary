@@ -8,15 +8,17 @@
 import Foundation
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS, introduced: 13.0, deprecated: 14.0)
 @available(macOS 10.15, *)
 public struct Label: View {
     
     private var systemIconName: String
+    private var localIconName: String
     private var labelTitle: String
     private var shouldCenter: Bool
     
-    public init(systemIconName: String, labelTitle: String, shouldCenter: Bool = true) {
+    public init(systemIconName: String = "", localIconName: String = "", labelTitle: String, shouldCenter: Bool = true) {
+        self.localIconName = localIconName
         self.systemIconName = systemIconName
         self.labelTitle = labelTitle
         self.shouldCenter = shouldCenter
@@ -26,9 +28,17 @@ public struct Label: View {
         
         HStack {
             
-            Image(systemName: systemIconName)
-                .padding(.leading, shouldCenter ? 0 : 30)
-                .font(.headline)
+            if systemIconName != "" {
+                Image(systemName: systemIconName)
+                    .font(.headline)
+                    .padding(.leading, shouldCenter ? 0 : 30)
+            } else if localIconName != "" {
+                Image(localIconName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 20, height: 20, alignment: .center)
+                    .padding(.leading, shouldCenter ? 0 : 30)
+            }
             
             Text(labelTitle)
                 .padding(.leading, 10)
@@ -42,4 +52,10 @@ public struct Label: View {
         
     }
     
+}
+
+struct Label_Previews: PreviewProvider {
+    static var previews: some View {
+        Label(localIconName: "miscellaneous.png", labelTitle: "ARKit")
+    }
 }
