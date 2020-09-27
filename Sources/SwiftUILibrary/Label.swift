@@ -44,9 +44,3 @@ public struct Label: View {
     }
     
 }
-
-struct Label_Previews: PreviewProvider {
-    static var previews: some View {
-        Label(localIconName: "miscellaneous.png", labelTitle: "ARKit")
-    }
-}
