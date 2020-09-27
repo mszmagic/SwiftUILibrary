@@ -10,6 +10,7 @@ import SwiftUI
 
 @available(iOS, introduced: 13.0, deprecated: 14.0)
 @available(macOS 10.15, *)
+@available(watchOS 6.0, *)
 public struct Label: View {
     
     private var systemIconName: String
