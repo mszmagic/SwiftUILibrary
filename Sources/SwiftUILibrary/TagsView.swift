@@ -9,7 +9,11 @@ import SwiftUI
 
 public struct TagsView: View {
     
-    @Binding public var tags: [String]
+    @Binding private var tags: [String]
+    
+    public init(tags: Binding<[String]>) {
+        _tags = tags
+    }
     
     public var body: some View {
         
