@@ -43,3 +43,10 @@ public struct BigRoundedButton: View {
     }
     
 }
+
+struct BigRoundedButton_Previews: PreviewProvider {
+    static var previews: some View {
+        BigRoundedButton(systemIconName: "arkit", buttonName: "ARKit", buttonColor: .blue)
+            .padding()
+    }
+}

@@ -81,5 +81,6 @@ public struct HorizontalListCell: View {
 struct HorizontalListCell_Previews: PreviewProvider {
     static var previews: some View {
         HorizontalListCell(systemIconName: "bag.fill", title: "Title", subtitle: "Subtitle", subtitle2: "Subtitle 2", actionLabel: "Label")
+            .padding()
     }
 }

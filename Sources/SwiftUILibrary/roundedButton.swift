@@ -41,3 +41,10 @@ public struct roundedButton: View {
     }
     
 }
+
+struct roundedButton_Previews: PreviewProvider {
+    static var previews: some View {
+        roundedButton(iconName: "arkit", buttonName: "ARKit", buttonColor: .blue)
+            .padding()
+    }
+}

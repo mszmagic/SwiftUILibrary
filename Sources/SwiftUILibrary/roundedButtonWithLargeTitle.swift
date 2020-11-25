@@ -41,3 +41,10 @@ public struct roundedButtonWithLargeLabels: View {
     }
     
 }
+
+struct roundedButtonWithLargeLabels_Previews: PreviewProvider {
+    static var previews: some View {
+        roundedButtonWithLargeLabels(largeLabel: "ノヒー", buttonName: "猫の名前", buttonColor: .blue)
+            .padding()
+    }
+}

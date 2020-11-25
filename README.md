@@ -2,8 +2,34 @@
 
 このレポジトリには、私が設計したSwiftUI UI要素がいくつか含まれており、私はそれらを自分のアプリケーションで使用します。
 
-- RoundedButton / BigRoundedButton (systemIconName, buttonName)
-- HorizontalListCell (title, subtitle, subtitle2, actionLabel)
-- HorizontalBasicInfo (title, content)
-- Label (systemIconName, labelTitle)
-- RoundedIconDisplay (iconName)
+- `TagsView`: ​画面に複数のテキストタグを表示
+
+<img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/TagsView.png">
+
+- `RoundedButton` / `BigRoundedButton`: アイコン付きの丸いボタンの表示。
+
+<img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/roundedButton.png">
+
+- `HorizontalListCell`: ​タイトル、サブタイトル、画像、その他のコンポーネントを含む水平表示。
+
+<img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/HorizontalListCell.png">
+
+- `HorizontalBasicInfo`: 左側にタイトル、右側に詳細値を含む水平表示。
+
+- `Label`: ​iOS 13 SwiftUIのラベル
+
+- `RoundedIconDisplay`: 角丸画像を表示
+
+<img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/RoundedIconDisplay.png">
+
+-  `roundedButton`
+
+<img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/roundedButton.png">
+
+- `bigRoundedButton`
+
+<img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/BigRoundedButton.png">
+
+- `roundedButtonWithLargeLabels`
+
+<img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/roundedButtonWithLargeLabels.png">

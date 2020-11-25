@@ -47,3 +47,10 @@ public struct RoundedIconDisplay: View {
     }
     
 }
+
+struct RoundedIconDisplay_Previews: PreviewProvider {
+    static var previews: some View {
+        RoundedIconDisplay(isSystemIcon: true, iconName: "arkit")
+            .padding()
+    }
+}
