@@ -10,9 +10,11 @@ import SwiftUI
 public struct TagsView: View {
     
     @Binding private var tags: [String]
+    var onTagSelected: (String) -> Void
     
-    public init(tags: Binding<[String]>) {
+    public init(tags: Binding<[String]>, onTagSelected: @escaping (String) -> Void = { _ in } ) {
         _tags = tags
+        self.onTagSelected = onTagSelected
     }
     
     public var body: some View {
@@ -25,6 +27,9 @@ public struct TagsView: View {
                         .foregroundColor(.white)
                         .padding(5)
                         .background(RoundedRectangle(cornerRadius: 6).foregroundColor(.blue))
+                        .onTapGesture(perform: {
+                            self.onTagSelected(tag)
+                        })
                 }
             }
         }
