@@ -16,9 +16,14 @@ public struct RoundedIconDisplay: View {
     private var isSystemIcon: Bool
     private var iconName: String
     
-    public init(isSystemIcon: Bool, iconName: String) {
+    private var backgroundColor: Color
+    private var iconColor: Color
+    
+    public init(isSystemIcon: Bool, iconName: String, backgroundColor: Color = .black, iconColor: Color = .white) {
         self.isSystemIcon = isSystemIcon
         self.iconName = iconName
+        self.backgroundColor = backgroundColor
+        self.iconColor = iconColor
     }
     
     public var body: some View {
@@ -27,17 +32,17 @@ public struct RoundedIconDisplay: View {
             
             RoundedRectangle(cornerRadius: 10)
                 .frame(width: 60, height: 60)
-                .foregroundColor(.black)
+                .foregroundColor(backgroundColor)
             
             if self.isSystemIcon {
                 Image(systemName: iconName)
-                    .foregroundColor(.white)
+                    .foregroundColor(iconColor)
                     .font(.title)
             } else if (UIImage(named: iconName) != nil) {
                 Image(uiImage: UIImage(named: iconName)!)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .foregroundColor(.white)
+                    .foregroundColor(iconColor)
                     .frame(width: 38, height: 38)
             }
             
