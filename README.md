@@ -2,7 +2,7 @@
 
 このレポジトリには、私が設計したSwiftUI UI要素がいくつか含まれており、私はそれらを自分のアプリケーションで使用します。
 
-- `TagsView`: ​画面に複数のテキストタグを表示
+- `TagsView`: 複数のタグとテキストを表示します。`TagView` を使ってタグを1つだけ表示することもできます。
 
 <img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/TagsView.png">
 
@@ -13,8 +13,6 @@
 - `addOverlay`: 既存のビューのオーバーレイとして別のビューをすばやく追加します。これを、あらゆるSwiftUIビュー要素のビューモディファイアとして使用できます。
 
 <img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/overlayExample.jpg">
-
-- `TagsView`: 複数のタグとテキストを表示します。`TagView` を使ってタグを1つだけ表示することもできます。
 
 - `RoundedButton` / `BigRoundedButton`: アイコン付きの丸いボタンの表示。
 
