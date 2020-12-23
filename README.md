@@ -12,7 +12,7 @@
 
 - `addOverlay`: 既存のビューのオーバーレイとして別のビューをすばやく追加します。これを、あらゆるSwiftUIビュー要素のビューモディファイアとして使用できます。
 
-<img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/overlayExample.png">
+<img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/overlayExample.jpg">
 
 - `TagsView`: 複数のタグとテキストを表示します。`TagView` を使ってタグを1つだけ表示することもできます。
 
