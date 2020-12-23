@@ -37,3 +37,15 @@
 - [`roundedButtonWithLargeLabels`](/Sources/SwiftUILibrary/roundedButtonWithLargeLabels.swift)
 
 <img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/roundedButtonWithLargeLabels.png">
+
+## インストール方法：
+
+### Swift Package Manager
+
+1. Xcode内からプロジェクトを開く
+2. 上部のシステムバーの"File"をクリック
+3. "Swift Packages"をクリック、次いで"Add package dependency…"をクリック
+4. 以下のURLをペースト：`https://github.com/mszmagic/SwiftUILibrary.git`
+5. Version: `Up to Next Major 1.2 <`
+6. "Next"をクリック
+7. "Done"をクリック。
