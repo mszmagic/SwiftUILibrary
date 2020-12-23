@@ -10,7 +10,7 @@
 
 <img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/SearchTextFieldView.png">
 
-- `addOverlay`: 既存のビューのオーバーレイとして別のビューをすばやく追加します。これを、あらゆるSwiftUIビュー要素のビューモディファイアとして使用できます。
+- `View.addOverlay`: 既存のビューのオーバーレイとして別のビューをすばやく追加します。これを、あらゆるSwiftUIビュー要素のビューモディファイアとして使用できます。
 
 <img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/overlayExample.jpg">
 
