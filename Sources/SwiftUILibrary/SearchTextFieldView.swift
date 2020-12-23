@@ -14,9 +14,17 @@ public struct SearchTextFieldView: View {
     
     @State private var isEditing: Bool = false
     
-    public init(searchText: Binding<String>, placeHolderText: String = "検索キーワード") {
+    private var textFieldOnEditingChanged: (Bool) -> Void
+    private var textFieldOnCommit: () -> Void
+    
+    public init(searchText: Binding<String>,
+                placeHolderText: String = "検索キーワード",
+                onEditingChanged: @escaping (Bool) -> Void = {_ in},
+                onCommit: @escaping () -> Void = {}) {
         self._searchText = searchText
         self.placeHolderText = placeHolderText
+        self.textFieldOnEditingChanged = onEditingChanged
+        self.textFieldOnCommit = onCommit
     }
     
     public var body: some View {
@@ -31,7 +39,7 @@ public struct SearchTextFieldView: View {
             }
             HStack {
                 Image(systemName: "magnifyingglass")
-                TextField("", text: $searchText)
+                TextField("", text: $searchText, onEditingChanged: self.textFieldOnEditingChanged, onCommit: self.textFieldOnCommit)
                 if searchText.count > 0 {
                     Spacer()
                     Button(action: {
