@@ -9,7 +9,7 @@ import SwiftUI
 import LinkPresentation
 
 @available(iOS 14.0, *)
-struct LinkPreview: View {
+public struct LinkPreview: View {
     
     @State var loaded: Bool = false
     @State var pageTitle: String
@@ -21,7 +21,7 @@ struct LinkPreview: View {
     // (title, url)
     private var onMetadataFetched: (String, String) -> Void
     
-    init(link: URL, onTappingLink: @escaping (URL) -> Void, onMetadataFetched: @escaping (String, String) -> Void) {
+    public init(link: URL, onTappingLink: @escaping (URL) -> Void, onMetadataFetched: @escaping (String, String) -> Void) {
         self.link = link
         _pageTitle = .init(initialValue: "URL")
         _pageURLStr = .init(initialValue: link.absoluteString)
@@ -29,7 +29,7 @@ struct LinkPreview: View {
         self.onMetadataFetched = onMetadataFetched
     }
     
-    var body: some View {
+    public var body: some View {
         
         Section {
             if let loadedImage = self.pageImage {
