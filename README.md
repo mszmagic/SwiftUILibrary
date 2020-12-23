@@ -49,3 +49,4 @@
 5. Version: `Up to Next Major 1.2 <`
 6. "Next"をクリック
 7. "Done"をクリック。
+8. `import SwiftUILibrary`
