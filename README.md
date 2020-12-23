@@ -20,7 +20,7 @@
 
 - [`LinkPreview`](/Sources/SwiftUILibrary/LinkPreview.swift):
 
-<img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/LinkPreview.jpg">
+<img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/LinkPreview.png">
 
 - [`RoundedButton`](/Sources/SwiftUILibrary/roundedButton.swift) /  [`BigRoundedButton`](/Sources/SwiftUILibrary/BigRoundedButton.swift): アイコン付きの丸いボタンの表示。
 
