@@ -6,6 +6,16 @@
 
 <img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/TagsView.png">
 
+- `SearchView`: 検索バーを表示して、ユーザーがテキストを入力し検索できるようにします
+
+<img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/SearchTextFieldView.png">
+
+- `addOverlay`: 既存のビューのオーバーレイとして別のビューをすばやく追加します。これを、あらゆるSwiftUIビュー要素のビューモディファイアとして使用できます。
+
+<img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/overlayExample.png">
+
+- `TagsView`: 複数のタグとテキストを表示します。`TagView` を使ってタグを1つだけ表示することもできます。
+
 - `RoundedButton` / `BigRoundedButton`: アイコン付きの丸いボタンの表示。
 
 <img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/roundedButton.png">
@@ -15,8 +25,6 @@
 <img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/HorizontalListCell.png">
 
 - `HorizontalBasicInfo`: 左側にタイトル、右側に詳細値を含む水平表示。
-
-- `Label`: ​iOS 13 SwiftUIのラベル
 
 - `RoundedIconDisplay`: 角丸画像を表示
 

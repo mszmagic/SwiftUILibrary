@@ -7,6 +7,36 @@
 
 import SwiftUI
 
+/**
+ テキスト付きの単一のタグを表示します。
+ */
+public struct TagView: View {
+    
+    var tagContent: String
+    
+    var textFont: Font
+    var textPadding: CGFloat
+    
+    var onTagSelected: (String) -> Void
+    
+    public init(tagContent: String, textFont: Font = .headline, textPadding: CGFloat = 5, onTagSelected: @escaping (String) -> Void = { _ in } ) {
+        self.tagContent = tagContent
+        self.textFont = textFont
+        self.textPadding = textPadding
+        self.onTagSelected = onTagSelected
+    }
+    public var body: some View {
+        Text(tagContent)
+            .font(textFont)
+            .foregroundColor(.white)
+            .padding(textPadding)
+            .background(RoundedRectangle(cornerRadius: 6).foregroundColor(.blue))
+            .onTapGesture(perform: {
+                self.onTagSelected(tagContent)
+            })
+    }
+}
+
 public struct TagsView: View {
     
     @Binding private var tags: [String]
@@ -22,14 +52,7 @@ public struct TagsView: View {
         ScrollView(.horizontal) {
             HStack {
                 ForEach(tags, id: \.self) { tag in
-                    Text(tag)
-                        .font(.subheadline)
-                        .foregroundColor(.white)
-                        .padding(5)
-                        .background(RoundedRectangle(cornerRadius: 6).foregroundColor(.blue))
-                        .onTapGesture(perform: {
-                            self.onTagSelected(tag)
-                        })
+                    TagView(tagContent: tag, onTagSelected: self.onTagSelected)
                 }
             }
         }
