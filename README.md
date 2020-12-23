@@ -18,6 +18,10 @@
 
 <img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/overlayExample.jpg">
 
+- [`LinkPreview`](/Sources/SwiftUILibrary/LinkPreview.swift):
+
+<img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/LinkPreview.jpg">
+
 - [`RoundedButton`](/Sources/SwiftUILibrary/roundedButton.swift) /  [`BigRoundedButton`](/Sources/SwiftUILibrary/BigRoundedButton.swift): アイコン付きの丸いボタンの表示。
 
 <img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/roundedButton.png">
@@ -46,7 +50,7 @@
 2. 上部のシステムバーの"File"をクリック
 3. "Swift Packages"をクリック、次いで"Add package dependency…"をクリック
 4. 以下のURLをペースト：`https://github.com/mszmagic/SwiftUILibrary.git`
-5. Version: `Up to Next Major 1.5 <`
+5. Version: `Up to Next Major 1.6 <`
 6. "Next"をクリック
 7. "Done"をクリック。
 8. `import SwiftUILibrary`
