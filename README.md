@@ -10,6 +10,10 @@
 
 <img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/TagsView.png">
 
+- [`SelectableTagView`](/Sources/SwiftUILibrary/SelectableTagView.swift)
+
+<img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/SelectableTagView.png">
+
 - [`SearchTextFieldView`](/Sources/SwiftUILibrary/SearchTextFieldView.swift): 検索バーを表示して、ユーザーがテキストを入力し検索できるようにします
 
 <img width="300" alt="image" src="https://raw.githubusercontent.com/mszmagic/SwiftUILibrary/master/Images/SearchTextFieldView.png">
