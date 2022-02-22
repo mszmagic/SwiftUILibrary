@@ -9,23 +9,22 @@ import SwiftUI
 
 public struct SelectableTagView: View {
     
-    @Binding var isTagSelected: Bool
-    
     var tagContent: String
     
+    var isTagSelected: Bool
     var textFont: Font
     var textPadding: CGFloat
     var styleColor: Color
     
     var onTagSelected: (String) -> Void
     
-    public init(tagContent: String, textFont: Font = .headline, textPadding: CGFloat = 10, styleColor: Color = .blue, isTagSelected: Binding<Bool>, onTagSelected: @escaping (String) -> Void = { _ in } ) {
+    public init(tagContent: String, textFont: Font = .headline, textPadding: CGFloat = 10, styleColor: Color = .blue, isTagSelected: Bool, onTagSelected: @escaping (String) -> Void = { _ in } ) {
         self.tagContent = tagContent
         self.textFont = textFont
         self.textPadding = textPadding
         self.onTagSelected = onTagSelected
         self.styleColor = styleColor
-        self._isTagSelected = isTagSelected
+        self.isTagSelected = isTagSelected
     }
     
     public var body: some View {
@@ -47,8 +46,8 @@ public struct SelectableTagView: View {
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            SelectableTagView(tagContent: "Selected Button", isTagSelected: .constant(true))
-            SelectableTagView(tagContent: "Normal Button", isTagSelected: .constant(false))
+            SelectableTagView(tagContent: "Selected Button", isTagSelected: true)
+            SelectableTagView(tagContent: "Normal Button", isTagSelected: false)
         }
     }
 }
