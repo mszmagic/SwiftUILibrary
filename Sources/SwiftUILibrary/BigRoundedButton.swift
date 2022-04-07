@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 @available(iOS 13.0, *)
-@available(macOS 10.15, *)
+@available(macOS 11, *)
 @available(watchOS 6.0, *)
 public struct BigRoundedButton: View {
     var systemIconName: String
@@ -44,6 +44,9 @@ public struct BigRoundedButton: View {
     
 }
 
+@available(iOS 13.0, *)
+@available(macOS 11, *)
+@available(watchOS 6.0, *)
 struct BigRoundedButton_Previews: PreviewProvider {
     static var previews: some View {
         BigRoundedButton(systemIconName: "arkit", buttonName: "ARKit", buttonColor: .blue)

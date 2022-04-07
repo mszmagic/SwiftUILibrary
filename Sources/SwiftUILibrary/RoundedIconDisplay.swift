@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
+#if os(iOS)
+
 @available(iOS 13.0, *)
-@available(macOS 10.15, *)
-@available(watchOS 6.0, *)
 public struct RoundedIconDisplay: View {
     
     private var isSystemIcon: Bool
@@ -53,9 +53,12 @@ public struct RoundedIconDisplay: View {
     
 }
 
+@available(iOS 13.0, *)
 struct RoundedIconDisplay_Previews: PreviewProvider {
     static var previews: some View {
         RoundedIconDisplay(isSystemIcon: true, iconName: "arkit")
             .padding()
     }
 }
+
+#endif

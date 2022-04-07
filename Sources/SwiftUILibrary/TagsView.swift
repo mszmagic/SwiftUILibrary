@@ -10,6 +10,9 @@ import SwiftUI
 /**
  テキスト付きの単一のタグを表示します。
  */
+@available(iOS 13.0, *)
+@available(macOS 11, *)
+@available(watchOS 6.0, *)
 public struct TagView: View {
     
     var tagContent: String
@@ -37,6 +40,9 @@ public struct TagView: View {
     }
 }
 
+@available(iOS 13.0, *)
+@available(macOS 11, *)
+@available(watchOS 6.0, *)
 public struct TagsView: View {
     
     @Binding private var tags: [String]
@@ -61,6 +67,9 @@ public struct TagsView: View {
     
 }
 
+@available(iOS 13.0, *)
+@available(macOS 11, *)
+@available(watchOS 6.0, *)
 struct TagsView_Previews: PreviewProvider {
     static var previews: some View {
         TagsView(tags: .constant(["Tag 1", "Tag 2", "Tag 3"]))

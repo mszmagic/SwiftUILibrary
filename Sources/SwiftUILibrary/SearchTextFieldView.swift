@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+#if os(iOS)
+
+@available(iOS 13.0, *)
+@available(watchOS 6.0, *)
 public struct SearchTextFieldView: View {
     
     @Binding private var searchText: String
@@ -58,8 +62,12 @@ public struct SearchTextFieldView: View {
     
 }
 
+@available(iOS 13.0, *)
+@available(watchOS 6.0, *)
 struct SearchTextFieldView_Previews: PreviewProvider {
     static var previews: some View {
         SearchTextFieldView(searchText: .constant(""))
     }
 }
+
+#endif

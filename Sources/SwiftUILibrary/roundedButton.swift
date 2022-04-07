@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 @available(iOS 13.0, *)
-@available(macOS 10.15, *)
+@available(macOS 11, *)
 @available(watchOS 6.0, *)
 public struct roundedButton: View {
     var iconName: String
@@ -42,6 +42,9 @@ public struct roundedButton: View {
     
 }
 
+@available(iOS 13.0, *)
+@available(macOS 11, *)
+@available(watchOS 6.0, *)
 struct roundedButton_Previews: PreviewProvider {
     static var previews: some View {
         roundedButton(iconName: "arkit", buttonName: "ARKit", buttonColor: .blue)

@@ -9,6 +9,8 @@
 import SwiftUI
 import MapKit
 
+#if os(iOS)
+
 public enum FloatingViewPosition {
     case top
     case bottom
@@ -68,7 +70,7 @@ public extension View {
     }
 }
 
-@available(iOS 14.0, *)
+@available(iOS 14, *)
 struct SwiftUIAddOverlay_Previews: PreviewProvider {
     static var previews: some View {
         let demoLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 35.672366, longitude: 139.766033), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
@@ -86,3 +88,5 @@ struct SwiftUIAddOverlay_Previews: PreviewProvider {
             }, floatingViewHeight: 50, position: .top, backgroundColor: .clear)
     }
 }
+
+#endif

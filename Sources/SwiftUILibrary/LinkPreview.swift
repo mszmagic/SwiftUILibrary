@@ -5,10 +5,13 @@
 //  Created by Shunzhe Ma on R 2/12/23.
 //
 
+#if os(iOS)
+
 import SwiftUI
 import LinkPresentation
 
-@available(iOS 14.0, *)
+@available(iOS 14, *)
+@available(watchOS 6.0, *)
 public struct LinkPreview: View {
     
     @State var loaded: Bool = false
@@ -84,7 +87,8 @@ public struct LinkPreview: View {
     
 }
 
-@available(iOS 14.0, *)
+@available(iOS 14, *)
+@available(watchOS 6.0, *)
 struct LinkPreview_Previews: PreviewProvider {
     static var previews: some View {
         Form {
@@ -96,3 +100,5 @@ struct LinkPreview_Previews: PreviewProvider {
         }
     }
 }
+
+#endif

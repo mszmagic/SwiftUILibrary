@@ -78,6 +78,9 @@ public struct HorizontalListCell: View {
     
 }
 
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
+@available(watchOS 6.0, *)
 struct HorizontalListCell_Previews: PreviewProvider {
     static var previews: some View {
         Form {

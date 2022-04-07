@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
+@available(watchOS 6.0, *)
 public struct SelectableTagView: View {
     
     var tagContent: String
@@ -43,6 +46,9 @@ public struct SelectableTagView: View {
     }
 }
 
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
+@available(watchOS 6.0, *)
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {

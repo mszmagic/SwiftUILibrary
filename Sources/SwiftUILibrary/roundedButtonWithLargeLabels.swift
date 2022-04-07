@@ -42,6 +42,9 @@ public struct roundedButtonWithLargeLabels: View {
     
 }
 
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
+@available(watchOS 6.0, *)
 struct roundedButtonWithLargeLabels_Previews: PreviewProvider {
     static var previews: some View {
         roundedButtonWithLargeLabels(largeLabel: "ノヒー", buttonName: "猫の名前", buttonColor: .blue)
