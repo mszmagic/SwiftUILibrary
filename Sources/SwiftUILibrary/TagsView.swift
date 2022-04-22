@@ -22,6 +22,8 @@ public struct TagView: View {
     
     var onTagSelected: (String) -> Void
     
+    var tagBackgroundColor: Color = .blue
+    
     public init(tagContent: String, textFont: Font = .headline, textPadding: CGFloat = 5, onTagSelected: @escaping (String) -> Void = { _ in } ) {
         self.tagContent = tagContent
         self.textFont = textFont
@@ -33,7 +35,7 @@ public struct TagView: View {
             .font(textFont)
             .foregroundColor(.white)
             .padding(textPadding)
-            .background(RoundedRectangle(cornerRadius: 6).foregroundColor(.blue))
+            .background(RoundedRectangle(cornerRadius: 6).foregroundColor(tagBackgroundColor))
             .onTapGesture(perform: {
                 self.onTagSelected(tagContent)
             })
