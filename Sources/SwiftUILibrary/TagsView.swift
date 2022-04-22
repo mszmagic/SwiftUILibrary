@@ -22,13 +22,14 @@ public struct TagView: View {
     
     var onTagSelected: (String) -> Void
     
-    var tagBackgroundColor: Color = .blue
+    var tagBackgroundColor: Color
     
-    public init(tagContent: String, textFont: Font = .headline, textPadding: CGFloat = 5, onTagSelected: @escaping (String) -> Void = { _ in } ) {
+    public init(tagContent: String, tagBackgroundColor: Color = .blue, textFont: Font = .headline, textPadding: CGFloat = 5, onTagSelected: @escaping (String) -> Void = { _ in } ) {
         self.tagContent = tagContent
         self.textFont = textFont
         self.textPadding = textPadding
         self.onTagSelected = onTagSelected
+        self.tagBackgroundColor = tagBackgroundColor
     }
     public var body: some View {
         Text(tagContent)
