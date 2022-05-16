@@ -5,26 +5,30 @@
 //  Created by Shunzhe Ma on 8/30/20.
 //
 
+#if os(iOS)
+
 import Foundation
 import SwiftUI
+import UIKit
 
 @available(iOS 13.0, *)
-@available(macOS 10.15, *)
-@available(watchOS 6.0, *)
+public enum ImageSource {
+    case systemIconName(String)
+    case localIconName(String)
+    case imageObj(UIImage)
+}
+
+@available(iOS 13.0, *)
 public struct HorizontalListCell: View {
     
-    // Image
-    private var isSystemIcon: Bool
-    private var iconName: String
-    
+    private var imgSource: ImageSource
     private var title: String
     private var subtitle: String
     private var subtitle2: String
     private var actionLabel: String
     
     public init(systemIconName: String, title: String, subtitle: String, subtitle2: String, actionLabel: String) {
-        self.isSystemIcon = true
-        self.iconName = systemIconName
+        self.imgSource = .systemIconName(systemIconName)
         self.title = title
         self.subtitle = subtitle
         self.subtitle2 = subtitle2
@@ -32,8 +36,15 @@ public struct HorizontalListCell: View {
     }
     
     public init(fileIconName: String, title: String, subtitle: String, subtitle2: String, actionLabel: String) {
-        self.isSystemIcon = false
-        self.iconName = fileIconName
+        self.imgSource = .localIconName(fileIconName)
+        self.title = title
+        self.subtitle = subtitle
+        self.subtitle2 = subtitle2
+        self.actionLabel = actionLabel
+    }
+    
+    public init(imageObj: UIImage, title: String, subtitle: String, subtitle2: String, actionLabel: String) {
+        self.imgSource = .imageObj(imageObj)
         self.title = title
         self.subtitle = subtitle
         self.subtitle2 = subtitle2
@@ -44,8 +55,21 @@ public struct HorizontalListCell: View {
         
         HStack {
             
-            RoundedIconDisplay(isSystemIcon: isSystemIcon, iconName: iconName)
-                .padding(.leading, 5)
+            switch imgSource {
+            case .systemIconName(let string):
+                RoundedIconDisplay(isSystemIcon: true, iconName: string)
+                    .padding(.leading, 5)
+            case .localIconName(let string):
+                RoundedIconDisplay(isSystemIcon: false, iconName: string)
+                    .padding(.leading, 5)
+            case .imageObj(let uIImage):
+                Image(uiImage: uIImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 60, height: 60)
+                    .cornerRadius(10)
+                    .padding(.leading, 5)
+            }
             
             VStack(alignment: .leading, spacing: 3) {
                 
@@ -88,3 +112,5 @@ struct HorizontalListCell_Previews: PreviewProvider {
         }
     }
 }
+
+#endif
