@@ -26,21 +26,24 @@ public struct HorizontalListCell: View {
     private var subtitle: String
     private var subtitle2: String
     private var actionLabel: String
+    private var iconBackgroundColor: Color
     
-    public init(systemIconName: String, title: String, subtitle: String, subtitle2: String, actionLabel: String) {
+    public init(systemIconName: String, title: String, subtitle: String, subtitle2: String, actionLabel: String, iconBackgroundColor: Color = .black) {
         self.imgSource = .systemIconName(systemIconName)
         self.title = title
         self.subtitle = subtitle
         self.subtitle2 = subtitle2
         self.actionLabel = actionLabel
+        self.iconBackgroundColor = iconBackgroundColor
     }
     
-    public init(fileIconName: String, title: String, subtitle: String, subtitle2: String, actionLabel: String) {
+    public init(fileIconName: String, title: String, subtitle: String, subtitle2: String, actionLabel: String, iconBackgroundColor: Color = .clear) {
         self.imgSource = .localIconName(fileIconName)
         self.title = title
         self.subtitle = subtitle
         self.subtitle2 = subtitle2
         self.actionLabel = actionLabel
+        self.iconBackgroundColor = iconBackgroundColor
     }
     
     public init(imageObj: UIImage, title: String, subtitle: String, subtitle2: String, actionLabel: String) {
@@ -49,6 +52,7 @@ public struct HorizontalListCell: View {
         self.subtitle = subtitle
         self.subtitle2 = subtitle2
         self.actionLabel = actionLabel
+        self.iconBackgroundColor = .blue
     }
     
     public var body: some View {
@@ -57,10 +61,10 @@ public struct HorizontalListCell: View {
             
             switch imgSource {
             case .systemIconName(let string):
-                RoundedIconDisplay(isSystemIcon: true, iconName: string)
+                RoundedIconDisplay(isSystemIcon: true, iconName: string, backgroundColor: self.iconBackgroundColor)
                     .padding(.leading, 5)
             case .localIconName(let string):
-                RoundedIconDisplay(isSystemIcon: false, iconName: string)
+                RoundedIconDisplay(isSystemIcon: false, iconName: string, backgroundColor: self.iconBackgroundColor)
                     .padding(.leading, 5)
             case .imageObj(let uIImage):
                 Image(uiImage: uIImage)
