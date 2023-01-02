@@ -15,6 +15,7 @@ public struct SearchTextFieldView: View {
     
     @Binding private var searchText: String
     private var placeHolderText: String
+    private var borderColor: Color
     
     @State private var isEditing: Bool = false
     
@@ -23,12 +24,14 @@ public struct SearchTextFieldView: View {
     
     public init(searchText: Binding<String>,
                 placeHolderText: String = "検索キーワード",
+                borderColor: Color = .clear,
                 onEditingChanged: @escaping (Bool) -> Void = {_ in},
                 onCommit: @escaping () -> Void = {}) {
         self._searchText = searchText
         self.placeHolderText = placeHolderText
         self.textFieldOnEditingChanged = onEditingChanged
         self.textFieldOnCommit = onCommit
+        self.borderColor = borderColor
     }
     
     public var body: some View {
@@ -37,6 +40,10 @@ public struct SearchTextFieldView: View {
             RoundedRectangle(cornerRadius: 10)
                 .frame(height: 50)
                 .foregroundColor(.init(.systemGray6))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(borderColor, lineWidth: 2.5)
+                )
             if searchText.isEmpty {
                 Text(placeHolderText)
                     .foregroundColor(.init(UIColor.darkGray))
