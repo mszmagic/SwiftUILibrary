@@ -7,43 +7,7 @@
 
 import SwiftUI
 
-/**
- テキスト付きの単一のタグを表示します。
- */
-@available(iOS 13.0, *)
-@available(macOS 11, *)
-@available(watchOS 6.0, *)
-public struct TagView: View {
-    
-    var tagContent: String
-    
-    var textFont: Font
-    var textPadding: CGFloat
-    
-    var onTagSelected: (String) -> Void
-    
-    var tagBackgroundColor: Color
-    
-    public init(tagContent: String, tagBackgroundColor: Color = .blue, textFont: Font = .headline, textPadding: CGFloat = 5, onTagSelected: @escaping (String) -> Void = { _ in } ) {
-        self.tagContent = tagContent
-        self.textFont = textFont
-        self.textPadding = textPadding
-        self.onTagSelected = onTagSelected
-        self.tagBackgroundColor = tagBackgroundColor
-    }
-    public var body: some View {
-        Text(tagContent)
-            .font(textFont)
-            .foregroundColor(.white)
-            .padding(textPadding)
-            .background(RoundedRectangle(cornerRadius: 6).foregroundColor(tagBackgroundColor))
-            .onTapGesture(perform: {
-                self.onTagSelected(tagContent)
-            })
-    }
-}
-
-@available(iOS 13.0, *)
+@available(iOS 15.0, *)
 @available(macOS 11, *)
 @available(watchOS 6.0, *)
 public struct TagsView: View {
@@ -70,7 +34,7 @@ public struct TagsView: View {
     
 }
 
-@available(iOS 13.0, *)
+@available(iOS 15.0, *)
 @available(macOS 11, *)
 @available(watchOS 6.0, *)
 struct TagsView_Previews: PreviewProvider {
