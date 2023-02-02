@@ -42,7 +42,13 @@ public struct TagView: View {
         self.sfSymbolImageName = sfSymbolImageName
     }
     public var body: some View {
-        Label(tagContent, systemImage: sfSymbolImageName)
+        Group {
+            if sfSymbolImageName.isEmpty {
+                Text(tagContent)
+            } else {
+                Label(tagContent, systemImage: sfSymbolImageName)
+            }
+        }
             .font(textFont)
             .foregroundColor((tagStyle == .borderedProminent) ? .white : tagBackgroundColor)
             .padding(textPadding)
