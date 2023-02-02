@@ -21,6 +21,7 @@ public struct TagView: View {
     }
     
     var tagContent: String
+    var sfSymbolImageName: String
     
     var textFont: Font
     var textPadding: CGFloat
@@ -31,16 +32,17 @@ public struct TagView: View {
     
     var tagStyle: TagStyle
     
-    public init(tagContent: String, tagBackgroundColor: Color = .blue, textFont: Font = .headline, textPadding: CGFloat = 8, style: TagStyle = .borderedProminent, onTagSelected: @escaping (String) -> Void = { _ in } ) {
+    public init(tagContent: String, tagBackgroundColor: Color = .blue, textFont: Font = .headline, textPadding: CGFloat = 8, style: TagStyle = .borderedProminent, sfSymbolImageName: String = "", onTagSelected: @escaping (String) -> Void = { _ in } ) {
         self.tagContent = tagContent
         self.textFont = textFont
         self.textPadding = textPadding
         self.onTagSelected = onTagSelected
         self.tagBackgroundColor = tagBackgroundColor
         self.tagStyle = style
+        self.sfSymbolImageName = sfSymbolImageName
     }
     public var body: some View {
-        Text(tagContent)
+        Label(tagContent, systemImage: sfSymbolImageName)
             .font(textFont)
             .foregroundColor((tagStyle == .borderedProminent) ? .white : tagBackgroundColor)
             .padding(textPadding)
@@ -62,7 +64,7 @@ public struct TagView: View {
 @available(watchOS 6.0, *)
 struct TagView_Previews: PreviewProvider {
     static var previews: some View {
-        TagView(tagContent: "Testing")
+        TagView(tagContent: "Testing", sfSymbolImageName: "checkmark.circle")
         TagView(tagContent: "Testing", style: .bordered)
     }
 }
