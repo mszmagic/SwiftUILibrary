@@ -9,7 +9,7 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 @available(macOS 11.0, *)
-@available(watchOS 6.0, *)
+@available(watchOS 7.0, *)
 public struct HorizontalBasicInfo_withSystemImage: View {
     
     private var systemImageName: String

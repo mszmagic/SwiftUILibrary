@@ -12,7 +12,7 @@ import SwiftUI
  */
 @available(iOS 15.0, *)
 @available(macOS 11, *)
-@available(watchOS 6.0, *)
+@available(watchOS 7.0, *)
 public struct TagView: View {
     
     public enum TagStyle {
@@ -67,7 +67,7 @@ public struct TagView: View {
 
 @available(iOS 15.0, *)
 @available(macOS 11, *)
-@available(watchOS 6.0, *)
+@available(watchOS 7.0, *)
 struct TagView_Previews: PreviewProvider {
     static var previews: some View {
         TagView(tagContent: "Testing", sfSymbolImageName: "checkmark.circle")

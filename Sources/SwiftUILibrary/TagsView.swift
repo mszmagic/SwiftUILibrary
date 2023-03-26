@@ -9,7 +9,7 @@ import SwiftUI
 
 @available(iOS 15.0, *)
 @available(macOS 11, *)
-@available(watchOS 6.0, *)
+@available(watchOS 7.0, *)
 public struct TagsView: View {
     
     @Binding private var tags: [String]
@@ -36,7 +36,7 @@ public struct TagsView: View {
 
 @available(iOS 15.0, *)
 @available(macOS 11, *)
-@available(watchOS 6.0, *)
+@available(watchOS 7.0, *)
 struct TagsView_Previews: PreviewProvider {
     static var previews: some View {
         TagsView(tags: .constant(["Tag 1", "Tag 2", "Tag 3"]))
