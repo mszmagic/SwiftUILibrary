@@ -10,7 +10,7 @@ import SwiftUI
 @available(iOS 13.0, *)
 @available(macOS 11, *)
 @available(watchOS 6.0, *)
-struct FlippableView<Front: View, Back: View>: View {
+public struct FlippableView<Front: View, Back: View>: View {
     
     var cardFrontView: Front
     var cardBackView: Back
@@ -18,12 +18,12 @@ struct FlippableView<Front: View, Back: View>: View {
     @State private var isFlipped = false
     private let animationDuration = 0.3
     
-    init(@ViewBuilder front: () -> Front, @ViewBuilder back: () -> Back) {
+    public init(@ViewBuilder front: () -> Front, @ViewBuilder back: () -> Back) {
         self.cardFrontView = front()
         self.cardBackView = back()
     }
     
-    var body: some View {
+    public var body: some View {
         VStack {
             Spacer()
             ZStack {
